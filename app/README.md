@@ -1,4 +1,4 @@
-# PocketController — Mobile App (`app/`)
+# PocketController-App — Mobile App (`app/`)
 
 Touch-first game controller for **Android and iOS**, built with Flutter. It connects to [PocketController Server](https://github.com/axcel-blade/PocketController-Server).
 
