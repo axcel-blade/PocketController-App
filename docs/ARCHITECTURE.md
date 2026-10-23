@@ -5,7 +5,7 @@ PocketController has two parts that talk over the local network:
 ```
 ┌──────────────────────────────┐   UDP, 48-byte packets    ┌──────────────────────────────┐   ViGEmBus   ┌──────────┐
 │ Mobile app (app/)            │ ───── Connect/Input/Ping ─▶│ PocketController Server      │ ───────────▶ │ Game     │
-│ Flutter · Android + iOS      │ ◀─ ConnectAck/Pong/Errors ─│ (server/) · .NET 10 · Windows│  virtual X360│ (XInput) │
+│ Flutter · Android + iOS      │ ◀─ ConnectAck/Pong/Errors ─│ (PC-Server/server/) · .NET 10│  virtual X360│ (XInput) │
 └──────────────────────────────┘                           └──────────────────────────────┘              └──────────┘
 ```
 
@@ -69,7 +69,7 @@ pixels, applies minimum sizes and keeps every control on screen, so one layout w
 different sizes. Every layout contains every control. Custom layouts are stored as JSON. If a
 saved layout is missing a control, it is filled in from Classic.
 
-## Server (`server/`)
+## Server (`PocketController-Server/server/`)
 
 | Project / file | Responsibility |
 |----------------|----------------|
@@ -118,12 +118,12 @@ Disconnect pauses it. Manual IP entry always stays available. See
 ## Keeping the two sides in sync
 
 The packet layout and the button bit positions are defined in two places:
-`server/Protocol/` and `app/lib/network/protocol.dart` + `models/gamepad_state.dart`.
-Change both in the same PR, update [PROTOCOL.md](PROTOCOL.md), and run both test suites.
+`PocketController-Server/server/Protocol/` and `app/lib/network/protocol.dart` + `models/gamepad_state.dart`.
+Change both together, update [PROTOCOL.md](PROTOCOL.md), and run both test suites.
 
 ## Testing
 
-- `server/Tests` — serializer round-trips, reply type values, client/session management,
+- `PocketController-Server/server/Tests` — serializer round-trips, reply type values, client/session management,
   discovery packets and a probe/reply round trip over loopback.
 - `app/test/protocol_test.dart` — packet layout, reply parsing, and `BridgeConnection` against
   a fake UDP server on loopback (handshake, press/release delivery, timeout, server full).

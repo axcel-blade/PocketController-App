@@ -29,7 +29,7 @@ Thank you for your interest in contributing!
 ### Server
 
 ```
-cd server
+cd PocketController-Server/server
 dotnet build PocketControllerServer.slnx
 dotnet test Tests
 ```
@@ -47,8 +47,8 @@ flutter run
 ## Protocol Changes
 
 The app and server share a 48-byte UDP packet format documented in [docs/PROTOCOL.md](docs/PROTOCOL.md).
-If you change it, update `server/Protocol/`, `app/lib/network/protocol.dart`, the tests on both
-sides, and the protocol document in the same PR.
+If you change it, update `PocketController-Server/server/Protocol/` in the server repo, `app/lib/network/protocol.dart`, the tests on both
+sides, and the protocol document together.
 
 ## Pull Request Guidelines
 
@@ -59,8 +59,8 @@ sides, and the protocol document in the same PR.
 - When releasing the **server**, update:
   - `CHANGELOG.md` — move its `[Unreleased]` entries into a dated `## [Server X.Y.Z] - YYYY-MM-DD` section
   - `README.md` — the server version badge and the **Versions** section
-  - `server/PocketControllerServer.csproj` — `Version`, `AssemblyVersion`, `FileVersion`
-  - `server/MainForm.Designer.cs` — the `lblVersion` text in the window header
+  - `PocketController-Server/server/PocketControllerServer.csproj` — `Version`, `AssemblyVersion`, `FileVersion`
+  - `PocketController-Server/server/MainForm.Designer.cs` — the `lblVersion` text in the window header
   - Tag the release `server-vX.Y.Z`
 - When releasing the **mobile app**, update:
   - `CHANGELOG.md` — move its `[Unreleased]` entries into a dated `## [App X.Y.Z] - YYYY-MM-DD` section

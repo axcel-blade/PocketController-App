@@ -1,7 +1,7 @@
 # PocketController — Mobile App (`app/`)
 
 Touch-first game controller for **Android and iOS**, built with Flutter. It sends input to
-**PocketController Server** (`../server`, Windows), which exposes each phone as a virtual Xbox 360 /
+**PocketController Server** (`../PocketController-Server/server`, Windows), which exposes each phone as a virtual Xbox 360 /
 XInput controller via the ViGEmBus driver.
 
 > The app on its own cannot control PC games. It needs PocketController Server running on the PC.

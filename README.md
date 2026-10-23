@@ -5,7 +5,7 @@
 </p>
 
 <!-- Dynamic badges (live data from GitHub) -->
-[![CI - Server](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController/ci-server.yml?branch=develop&label=CI%20server&logo=dotnet)](https://github.com/axcel-blade/PocketController/actions/workflows/ci-server.yml)
+[![CI - Server](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController-Server/ci-server.yml?branch=main&label=CI%20server&logo=dotnet)](https://github.com/axcel-blade/PocketController-Server/actions/workflows/ci-server.yml)
 [![CI - App](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController/ci-app.yml?branch=develop&label=CI%20app&logo=flutter)](https://github.com/axcel-blade/PocketController/actions/workflows/ci-app.yml)
 [![Latest release](https://img.shields.io/github/v/release/axcel-blade/PocketController?include_prereleases&sort=semver)](https://github.com/axcel-blade/PocketController/releases)
 [![Open issues](https://img.shields.io/github/issues/axcel-blade/PocketController)](https://github.com/axcel-blade/PocketController/issues)
@@ -19,7 +19,7 @@
 [![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev/)
 [![Platforms](https://img.shields.io/badge/app-Android%20%7C%20iOS-5cd6e6)](app/README.md)
-[![Server](https://img.shields.io/badge/server-Windows%2010%2F11-0078D4?logo=windows&logoColor=white)](server/)
+[![Server](https://img.shields.io/badge/server-Windows%2010%2F11-0078D4?logo=windows&logoColor=white)](https://github.com/axcel-blade/PocketController-Server)
 [![Protocol](https://img.shields.io/badge/protocol-UDP%20%C2%B7%2048%20bytes-5cd6e6)](docs/PROTOCOL.md)
 [![Driver](https://img.shields.io/badge/driver-ViGEmBus-555)](https://github.com/nefarius/ViGEmBus)
 
@@ -30,7 +30,7 @@ The phone app only works together with PocketController Server on Windows; see [
 ## Architecture
 
 ```
-server/ (Windows, .NET 10 WinForms)            app/ (Flutter, Android + iOS)
+PocketController-Server/server/ (.NET 10)       app/ (Flutter, Android + iOS)
 ├── Protocol      — packets + discovery format ├── screens/  (controller, connection)
 ├── NetworkLayer  — UDP server, sessions,      ├── widgets/  (controls, layout surface/picker)
 │                   discovery                  ├── models/   (gamepad state, layouts)
@@ -65,7 +65,7 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a detailed walkthrough.
 ## Getting Started
 
 1. Install the ViGEmBus driver.
-2. Open `server/PocketControllerServer.slnx`, set **PocketControllerServer** as the startup project, and run it (F5).
+2. Open `PocketController-Server/server/PocketControllerServer.slnx` from the [PocketController-Server](https://github.com/axcel-blade/PocketController-Server) repo, set **PocketControllerServer** as the startup project, and run it (F5).
 3. Click **Start** — the server listens on UDP port `5555` by default.
 4. Build and install the Flutter app (`cd app && flutter run`).
 5. Open the **PC connection** screen (status chip, top left). Your PC appears under **On your network**; tap it. Or enter the PC's IP address and port manually and tap **Connect**.
@@ -91,7 +91,7 @@ Having trouble? See [SUPPORT.md](SUPPORT.md).
 ## Development
 
 ```sh
-cd server   && dotnet test Tests
+cd PocketController-Server/server && dotnet test Tests
 cd app && flutter analyze && flutter test
 ```
 

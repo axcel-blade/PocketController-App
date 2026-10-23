@@ -1,6 +1,6 @@
 # PocketController Wire Protocol
 
-The mobile app talks to **PocketController Server** (`server/`, Windows) over **UDP**. The server turns each
+The mobile app talks to **PocketController Server** (`PocketController-Server/server/`, Windows) over **UDP**. The server turns each
 connected phone into a virtual Xbox 360 controller through the [ViGEmBus](https://github.com/nefarius/ViGEmBus)
 driver, so games see an ordinary XInput gamepad.
 
