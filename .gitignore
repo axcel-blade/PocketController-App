@@ -1,6 +1,9 @@
 CLAUDE.md
 .claude/
 
+# Separate server repository (nested checkout)
+PocketController-Server/
+
 # .NET build outputs
 bin/
 obj/
