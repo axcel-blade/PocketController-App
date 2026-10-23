@@ -1,5 +1,7 @@
 # Code of Conduct
 
+This code of conduct applies to PocketController-App.
+
 ## Our Pledge
 
 We are committed to making participation in this project a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
@@ -7,12 +9,14 @@ We are committed to making participation in this project a harassment-free exper
 ## Our Standards
 
 **Positive behaviour includes:**
+
 - Using welcoming and inclusive language
 - Being respectful of differing viewpoints and experiences
 - Gracefully accepting constructive criticism
 - Focusing on what is best for the community
 
 **Unacceptable behaviour includes:**
+
 - Trolling, insulting or derogatory comments, and personal or political attacks
 - Public or private harassment
 - Publishing others' private information without explicit permission
@@ -20,7 +24,7 @@ We are committed to making participation in this project a harassment-free exper
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by opening an issue or contacting the project maintainer directly. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by opening an [issue](https://github.com/axcel-blade/PocketController-App/issues) or contacting the project maintainer directly. All complaints will be reviewed and investigated promptly and fairly.
 
 ## Attribution
 

@@ -1,10 +1,14 @@
 # Security Policy
 
+This policy covers the PocketController mobile app in this repository.
+
 ## Supported Versions
 
 | Version | Supported |
 |---------|-----------|
 | 1.x     | ✅ Yes    |
+
+The version in `app/pubspec.yaml` is 1.2.2.
 
 ## Reporting a Vulnerability
 
