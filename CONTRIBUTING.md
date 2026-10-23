@@ -28,8 +28,10 @@ Thank you for your interest in contributing!
 
 ### Server
 
+Clone [PocketController-Server](https://github.com/axcel-blade/PocketController-Server), then from that repo:
+
 ```
-cd PocketController-Server/server
+cd server
 dotnet build PocketControllerServer.slnx
 dotnet test Tests
 ```
@@ -47,7 +49,7 @@ flutter run
 ## Protocol Changes
 
 The app and server share a 48-byte UDP packet format documented in [docs/PROTOCOL.md](docs/PROTOCOL.md).
-If you change it, update `PocketController-Server/server/Protocol/` in the server repo, `app/lib/network/protocol.dart`, the tests on both
+If you change it, update `server/Protocol/` in PocketController-Server, `app/lib/network/protocol.dart`, the tests on both
 sides, and the protocol document together.
 
 ## Pull Request Guidelines
@@ -59,8 +61,8 @@ sides, and the protocol document together.
 - When releasing the **server**, update:
   - `CHANGELOG.md` — move its `[Unreleased]` entries into a dated `## [Server X.Y.Z] - YYYY-MM-DD` section
   - `README.md` — the server version badge and the **Versions** section
-  - `PocketController-Server/server/PocketControllerServer.csproj` — `Version`, `AssemblyVersion`, `FileVersion`
-  - `PocketController-Server/server/MainForm.Designer.cs` — the `lblVersion` text in the window header
+  - `server/PocketControllerServer.csproj` in PocketController-Server — `Version`, `AssemblyVersion`, `FileVersion`
+  - `server/MainForm.Designer.cs` in PocketController-Server — the `lblVersion` text in the window header
   - Tag the release `server-vX.Y.Z`
 - When releasing the **mobile app**, update:
   - `CHANGELOG.md` — move its `[Unreleased]` entries into a dated `## [App X.Y.Z] - YYYY-MM-DD` section

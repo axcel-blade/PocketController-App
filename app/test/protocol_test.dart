@@ -5,7 +5,7 @@ import 'package:pocket_controller/models/gamepad_state.dart';
 import 'package:pocket_controller/network/bridge_connection.dart';
 import 'package:pocket_controller/network/protocol.dart';
 
-/// Minimal stand-in for the Windows bridge: replies like PocketController-Server/server/ServerController.cs.
+/// Minimal stand-in for the Windows bridge: replies like ServerController.cs in PocketController-Server.
 class FakeBridge {
   final RawDatagramSocket socket;
   final List<Uint8List> received = [];

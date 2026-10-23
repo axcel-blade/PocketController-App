@@ -69,7 +69,7 @@ pixels, applies minimum sizes and keeps every control on screen, so one layout w
 different sizes. Every layout contains every control. Custom layouts are stored as JSON. If a
 saved layout is missing a control, it is filled in from Classic.
 
-## Server (`PocketController-Server/server/`)
+## Server (`server/` in [PocketController-Server](https://github.com/axcel-blade/PocketController-Server))
 
 | Project / file | Responsibility |
 |----------------|----------------|
@@ -118,12 +118,12 @@ Disconnect pauses it. Manual IP entry always stays available. See
 ## Keeping the two sides in sync
 
 The packet layout and the button bit positions are defined in two places:
-`PocketController-Server/server/Protocol/` and `app/lib/network/protocol.dart` + `models/gamepad_state.dart`.
+`server/Protocol/` in PocketController-Server and `app/lib/network/protocol.dart` + `models/gamepad_state.dart`.
 Change both together, update [PROTOCOL.md](PROTOCOL.md), and run both test suites.
 
 ## Testing
 
-- `PocketController-Server/server/Tests` — serializer round-trips, reply type values, client/session management,
+- `server/Tests` in PocketController-Server — serializer round-trips, reply type values, client/session management,
   discovery packets and a probe/reply round trip over loopback.
 - `app/test/protocol_test.dart` — packet layout, reply parsing, and `BridgeConnection` against
   a fake UDP server on loopback (handshake, press/release delivery, timeout, server full).

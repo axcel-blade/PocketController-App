@@ -388,7 +388,7 @@ class _CompatibilityCard extends StatelessWidget {
         ]),
         SizedBox(height: 10),
         Text(
-          'This app needs the PocketController Server for Windows (PocketController-Server/server) '
+          'This app needs the PocketController Server for Windows '
           'running on your PC. The server uses the ViGEmBus driver to create a virtual Xbox 360 '
           'controller, so games see a normal XInput gamepad.',
           style: body,

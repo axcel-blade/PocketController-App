@@ -6,7 +6,7 @@ import 'protocol.dart';
 
 enum BridgeStatus { disconnected, connecting, connected, error }
 
-/// UDP link to the PocketController PC bridge (PocketController-Server/server).
+/// UDP link to the PocketController PC bridge (PocketController-Server repository).
 ///
 /// The app only reports [BridgeStatus.connected] after the bridge has answered the
 /// Connect packet with a ConnectAck, and it drops to [BridgeStatus.error] if the

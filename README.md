@@ -6,11 +6,11 @@
 
 <!-- Dynamic badges (live data from GitHub) -->
 [![CI - Server](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController-Server/ci-server.yml?branch=main&label=CI%20server&logo=dotnet)](https://github.com/axcel-blade/PocketController-Server/actions/workflows/ci-server.yml)
-[![CI - App](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController/ci-app.yml?branch=develop&label=CI%20app&logo=flutter)](https://github.com/axcel-blade/PocketController/actions/workflows/ci-app.yml)
-[![Latest release](https://img.shields.io/github/v/release/axcel-blade/PocketController?include_prereleases&sort=semver)](https://github.com/axcel-blade/PocketController/releases)
-[![Open issues](https://img.shields.io/github/issues/axcel-blade/PocketController)](https://github.com/axcel-blade/PocketController/issues)
-[![Last commit](https://img.shields.io/github/last-commit/axcel-blade/PocketController/develop)](https://github.com/axcel-blade/PocketController/commits/develop)
-[![Stars](https://img.shields.io/github/stars/axcel-blade/PocketController?style=flat)](https://github.com/axcel-blade/PocketController/stargazers)
+[![CI - App](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController-App/ci-app.yml?branch=develop&label=CI%20app&logo=flutter)](https://github.com/axcel-blade/PocketController-App/actions/workflows/ci-app.yml)
+[![Latest release](https://img.shields.io/github/v/release/axcel-blade/PocketController-App?include_prereleases&sort=semver)](https://github.com/axcel-blade/PocketController-App/releases)
+[![Open issues](https://img.shields.io/github/issues/axcel-blade/PocketController-App)](https://github.com/axcel-blade/PocketController-App/issues)
+[![Last commit](https://img.shields.io/github/last-commit/axcel-blade/PocketController-App/develop)](https://github.com/axcel-blade/PocketController-App/commits/develop)
+[![Stars](https://img.shields.io/github/stars/axcel-blade/PocketController-App?style=flat)](https://github.com/axcel-blade/PocketController-App/stargazers)
 
 <!-- Static badges -->
 [![License: MIT](https://img.shields.io/badge/license-MIT-c4f82a)](LICENSE)
@@ -30,7 +30,7 @@ The phone app only works together with PocketController Server on Windows; see [
 ## Architecture
 
 ```
-PocketController-Server/server/ (.NET 10)       app/ (Flutter, Android + iOS)
+server/ (.NET 10, PocketController-Server)      app/ (Flutter, PocketController-App)
 ├── Protocol      — packets + discovery format ├── screens/  (controller, connection)
 ├── NetworkLayer  — UDP server, sessions,      ├── widgets/  (controls, layout surface/picker)
 │                   discovery                  ├── models/   (gamepad state, layouts)
@@ -65,7 +65,7 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a detailed walkthrough.
 ## Getting Started
 
 1. Install the ViGEmBus driver.
-2. Open `PocketController-Server/server/PocketControllerServer.slnx` from the [PocketController-Server](https://github.com/axcel-blade/PocketController-Server) repo, set **PocketControllerServer** as the startup project, and run it (F5).
+2. In the [PocketController-Server](https://github.com/axcel-blade/PocketController-Server) repo, open `server/PocketControllerServer.slnx`, set **PocketControllerServer** as the startup project, and run it (F5).
 3. Click **Start** — the server listens on UDP port `5555` by default.
 4. Build and install the Flutter app (`cd app && flutter run`).
 5. Open the **PC connection** screen (status chip, top left). Your PC appears under **On your network**; tap it. Or enter the PC's IP address and port manually and tap **Connect**.
@@ -91,7 +91,9 @@ Having trouble? See [SUPPORT.md](SUPPORT.md).
 ## Development
 
 ```sh
-cd PocketController-Server/server && dotnet test Tests
+# PocketController-Server
+cd server && dotnet test Tests
+# PocketController-App
 cd app && flutter analyze && flutter test
 ```
 
