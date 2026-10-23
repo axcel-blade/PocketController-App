@@ -1,11 +1,11 @@
-# PocketController
+# PocketController-App
 
 <p align="center">
-  <img src="docs/assets/logos/android-logo.png" alt="PocketController logo" width="128">
+  <img src="docs/assets/logos/android-logo.png" alt="PocketController-App logo" width="128">
 </p>
 
 <!-- Dynamic badges (live data from GitHub) -->
-[![CI](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController-App/ci-app.yml?branch=main&label=CI&logo=flutter)](https://github.com/axcel-blade/PocketController-App/actions/workflows/ci-app.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController-App/ci.yml?branch=main&label=CI&logo=flutter)](https://github.com/axcel-blade/PocketController-App/actions/workflows/ci.yml)
 [![Latest release](https://img.shields.io/github/v/release/axcel-blade/PocketController-App?include_prereleases&sort=semver)](https://github.com/axcel-blade/PocketController-App/releases)
 [![Open issues](https://img.shields.io/github/issues/axcel-blade/PocketController-App)](https://github.com/axcel-blade/PocketController-App/issues)
 [![Last commit](https://img.shields.io/github/last-commit/axcel-blade/PocketController-App/main)](https://github.com/axcel-blade/PocketController-App/commits/main)
@@ -74,7 +74,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). The Flutter project notes are in [app/RE
 
 | Project | Version |
 |---------|---------|
-| PocketController app | **1.2.2** |
+| PocketController-App app | **1.2.2** |
 
 See the [changelog](CHANGELOG.md).
 

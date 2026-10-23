@@ -1,6 +1,6 @@
 # Support
 
-Help for the PocketController phone app (Android and iOS).
+Help for the PocketController-App phone app (Android and iOS).
 
 ## Getting Help
 
@@ -22,7 +22,7 @@ Help for the PocketController phone app (Android and iOS).
 Please include:
 
 - Phone model and Android or iOS version
-- PocketController app version
+- PocketController-App app version
 - The error shown on the connection screen, if any
 - Steps to reproduce
 - Expected vs actual behaviour

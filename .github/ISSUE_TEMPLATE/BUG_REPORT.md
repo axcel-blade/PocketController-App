@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a problem with the PocketController phone app
+about: Report a problem with the PocketController-App phone app
 labels: bug
 ---
 
@@ -25,7 +25,7 @@ labels: bug
 ## Environment
 
 - Phone model and Android / iOS version:
-- PocketController app version:
+- PocketController-App app version:
 - Connection screen status / error (if any):
 
 ## Extra Detail

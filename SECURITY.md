@@ -1,6 +1,6 @@
 # Security Policy
 
-This policy covers the PocketController mobile app in this repository.
+This policy covers the PocketController-App mobile app in this repository.
 
 ## Supported Versions
 
