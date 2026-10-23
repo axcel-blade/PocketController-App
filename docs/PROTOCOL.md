@@ -1,4 +1,4 @@
-# PocketController Wire Protocol
+# PocketController-App Wire Protocol
 
 Packets are sent to [PocketController Server](https://github.com/axcel-blade/PocketController-Server). This document describes what the phone app sends and what replies it handles.
 

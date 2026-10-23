@@ -1,6 +1,6 @@
 # Changelog
 
-Changelog for the PocketController phone app.
+Changelog for the PocketController-App phone app.
 
 ## [Unreleased]
 

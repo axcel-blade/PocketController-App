@@ -1,4 +1,4 @@
-# PocketController Architecture
+# PocketController-App Architecture
 
 How the Flutter app in this repository is put together. Packet layout: [PROTOCOL.md](PROTOCOL.md).
 

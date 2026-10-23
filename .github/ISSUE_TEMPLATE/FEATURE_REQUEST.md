@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a feature for the PocketController phone app
+about: Suggest a feature for the PocketController-App phone app
 labels: enhancement
 ---
 
