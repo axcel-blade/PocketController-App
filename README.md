@@ -5,105 +5,86 @@
 </p>
 
 <!-- Dynamic badges (live data from GitHub) -->
-[![CI - Server](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController/ci-server.yml?branch=develop&label=CI%20server&logo=dotnet)](https://github.com/axcel-blade/PocketController/actions/workflows/ci-server.yml)
-[![CI - App](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController/ci-app.yml?branch=develop&label=CI%20app&logo=flutter)](https://github.com/axcel-blade/PocketController/actions/workflows/ci-app.yml)
-[![Latest release](https://img.shields.io/github/v/release/axcel-blade/PocketController?include_prereleases&sort=semver)](https://github.com/axcel-blade/PocketController/releases)
-[![Open issues](https://img.shields.io/github/issues/axcel-blade/PocketController)](https://github.com/axcel-blade/PocketController/issues)
-[![Last commit](https://img.shields.io/github/last-commit/axcel-blade/PocketController/develop)](https://github.com/axcel-blade/PocketController/commits/develop)
-[![Stars](https://img.shields.io/github/stars/axcel-blade/PocketController?style=flat)](https://github.com/axcel-blade/PocketController/stargazers)
+[![CI](https://img.shields.io/github/actions/workflow/status/axcel-blade/PocketController-App/ci-app.yml?branch=main&label=CI&logo=flutter)](https://github.com/axcel-blade/PocketController-App/actions/workflows/ci-app.yml)
+[![Latest release](https://img.shields.io/github/v/release/axcel-blade/PocketController-App?include_prereleases&sort=semver)](https://github.com/axcel-blade/PocketController-App/releases)
+[![Open issues](https://img.shields.io/github/issues/axcel-blade/PocketController-App)](https://github.com/axcel-blade/PocketController-App/issues)
+[![Last commit](https://img.shields.io/github/last-commit/axcel-blade/PocketController-App/main)](https://github.com/axcel-blade/PocketController-App/commits/main)
+[![Stars](https://img.shields.io/github/stars/axcel-blade/PocketController-App?style=flat)](https://github.com/axcel-blade/PocketController-App/stargazers)
 
 <!-- Static badges -->
-[![License: MIT](https://img.shields.io/badge/license-MIT-c4f82a)](LICENSE)
-[![Server version](https://img.shields.io/badge/server-1.2.2-c4f82a)](CHANGELOG.md)
-[![App version](https://img.shields.io/badge/app-1.2.2-c4f82a)](CHANGELOG.md)
-[![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-c4f82a)](LICENSE.md)
+[![Version](https://img.shields.io/badge/version-1.2.2-c4f82a)](CHANGELOG.md)
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev/)
-[![Platforms](https://img.shields.io/badge/app-Android%20%7C%20iOS-5cd6e6)](app/README.md)
-[![Server](https://img.shields.io/badge/server-Windows%2010%2F11-0078D4?logo=windows&logoColor=white)](server/)
+[![Platforms](https://img.shields.io/badge/platform-Android%20%7C%20iOS-5cd6e6)](app/README.md)
 [![Protocol](https://img.shields.io/badge/protocol-UDP%20%C2%B7%2048%20bytes-5cd6e6)](docs/PROTOCOL.md)
-[![Driver](https://img.shields.io/badge/driver-ViGEmBus-555)](https://github.com/nefarius/ViGEmBus)
 
-Turn your Android or iOS phone into a wireless Xbox 360 (XInput) controller for your PC.
+This repository is the Flutter phone app for Android and iOS. It connects to [PocketController Server](https://github.com/axcel-blade/PocketController-Server).
 
-The phone app only works together with PocketController Server on Windows; see [docs/PROTOCOL.md](docs/PROTOCOL.md) for the UDP protocol.
-
-## Architecture
+## What this project does
 
 ```
-server/ (Windows, .NET 10 WinForms)            app/ (Flutter, Android + iOS)
-├── Protocol      — packets + discovery format ├── screens/  (controller, connection)
-├── NetworkLayer  — UDP server, sessions,      ├── widgets/  (controls, layout surface/picker)
-│                   discovery                  ├── models/   (gamepad state, layouts)
-├── GamepadDriver — virtual Xbox 360 (ViGEm)   ├── services/ (persisted settings)
-└── MainForm      — themed server window       └── network/  (connection, discovery, auto-connect)
+app/ (Flutter)
+├── screens/   (controller, connection)
+├── widgets/   (controls, layout surface and picker)
+├── models/    (gamepad state, layouts)
+├── services/  (persisted settings)
+└── network/   (connection, discovery, auto-connect)
 ```
-
-## Features
 
 - **Controls:** 8-way D-pad, A/B/X/Y, two analog sticks, LB/RB, analog LT/RT, Back / Home / Start — all multi-touch.
 - **Layouts:** Classic, Racing and Compact, plus custom layouts you can drag, resize, save and delete.
-- **Automatic discovery & reconnect:** the app finds PocketController servers on your Wi‑Fi and reconnects to your PC whenever it's available — at launch, after the server starts, or after a dropped connection. Entering an IP manually still works.
-- **Server window:** shows the PC address to enter, Start/Stop, connected phones by name, and an event log, in the same theme as the app.
-- **Honest connection status:** the app only shows *Connected* after the server acknowledges it, and shows latency and specific errors otherwise.
-- **Comfort & accessibility:** haptic feedback (toggleable), screen-reader labels, 44 px minimum touch targets, sizing for small phones.
+- **Discovery and reconnect:** the app lists a PC on the same Wi‑Fi and rejoins it at launch, when it appears later, or after a dropped connection. Entering an IP manually still works.
+- **Connection status:** *Connected* is shown only after an acknowledgement, with latency and specific errors otherwise.
+- **Comfort:** haptic feedback (toggleable), screen-reader labels, 44 px minimum touch targets, sizing for small phones.
 - Settings and layouts are stored on the phone.
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a detailed walkthrough.
+| Setting   | Value |
+|-----------|-------|
+| UDP port  | 5555  |
+| Discovery | UDP 5556 (probes) / 5557 (announcements) |
+| Send rate | 60 Hz |
 
 ## Requirements
 
-### Server (PC)
-- Windows 10/11
-- [ViGEmBus driver](https://github.com/nefarius/ViGEmBus/releases) installed
-- .NET 10 runtime
-- To build: .NET 10 SDK, and Visual Studio 2022 17.13+ or Visual Studio 2026 (the solution is `.slnx`)
-
-### Client (Android / iOS)
 - Flutter 3.x / Dart 3.x
-- Android or iOS phone on the same Wi-Fi network
+- An Android or iOS phone on the same Wi-Fi network as the PC
 
 ## Getting Started
 
-1. Install the ViGEmBus driver.
-2. Open `server/PocketControllerServer.slnx`, set **PocketControllerServer** as the startup project, and run it (F5).
-3. Click **Start** — the server listens on UDP port `5555` by default.
-4. Build and install the Flutter app (`cd app && flutter run`).
-5. Open the **PC connection** screen (status chip, top left). Your PC appears under **On your network**; tap it. Or enter the PC's IP address and port manually and tap **Connect**.
-6. If Windows Firewall asks, allow PocketController Server on private networks (UDP `5555` for play, `5556`–`5557` for discovery).
+1. Build and install this app (`cd app && flutter run`).
+2. Open the **PC connection** screen (status chip, top left). Your PC appears under **On your network**; tap it. Or enter the IP address and port manually and tap **Connect**.
 
 Next time, the app reconnects to the same PC automatically when it finds it.
 
 Having trouble? See [SUPPORT.md](SUPPORT.md).
 
-> PocketController only works with PocketController Server. It is not compatible with DroidJoy or
-> other controller servers. The wire format is documented in [docs/PROTOCOL.md](docs/PROTOCOL.md).
-
-## Default Settings
-
-| Setting     | Value |
-|-------------|-------|
-| UDP Port    | 5555  |
-| Discovery   | UDP 5556 (probes) / 5557 (announcements) |
-| Max Clients | 4     |
-| Timeout     | 5 s   |
-| Send Rate   | 60 Hz |
+> The app is not compatible with DroidJoy or other controller servers. The packets it sends are documented in [docs/PROTOCOL.md](docs/PROTOCOL.md).
 
 ## Development
 
 ```sh
-cd server   && dotnet test Tests
-cd app && flutter analyze && flutter test
+cd app
+flutter analyze
+flutter test
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for branching and PR guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md). The Flutter project notes are in [app/README.md](app/README.md).
 
-## Versions
+## Version
 
-The server and the mobile app are versioned independently.
-
-| Component | Version |
-|-----------|---------|
-| Windows server | **v1.2.2** |
-| Mobile app (Android / iOS) | **v1.2.2** |
+| Project | Version |
+|---------|---------|
+| PocketController app | **1.2.2** |
 
 See the [changelog](CHANGELOG.md).
+
+## Further reading
+
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [SUPPORT.md](SUPPORT.md)
+- [SECURITY.md](SECURITY.md)
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [CHANGELOG.md](CHANGELOG.md)
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- [docs/PROTOCOL.md](docs/PROTOCOL.md)
+- [LICENSE.md](LICENSE.md)

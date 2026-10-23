@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a problem with PocketController
+about: Report a problem with the PocketController phone app
 labels: bug
 ---
 
@@ -24,14 +24,10 @@ labels: bug
 
 ## Environment
 
-- OS: <!-- e.g. Windows 11 22H2 -->
-- .NET version: <!-- dotnet --version -->
-- ViGEmBus version:
-- PocketController server version:
-- PocketController app version:
 - Phone model and Android / iOS version:
+- PocketController app version:
 - Connection screen status / error (if any):
 
-## Event Log Output
+## Extra Detail
 
-<!-- Paste any relevant lines from the server's event log panel. -->
+<!-- Screenshots or anything else that shows the problem on the phone. -->
