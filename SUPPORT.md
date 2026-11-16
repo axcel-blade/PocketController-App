@@ -10,7 +10,7 @@ Help for the PocketController-App phone app (Android and iOS).
 
 ## Before Opening an Issue
 
-1. Check the [README](README.md) for how to run the app, and [app/README.md](app/README.md) for the Flutter project.
+1. Check the [README](README.md) for how to run the app. Run Flutter commands from the repository root (the folder that contains `pubspec.yaml`).
 2. Read the error on the **PC connection** screen. Common causes:
    - The phone and PC are on different networks, or the Wi-Fi isolates clients.
    - The PC does not appear under **On your network**. The app probes UDP `5556` and listens on UDP `5557`. Entering the IP manually still works.

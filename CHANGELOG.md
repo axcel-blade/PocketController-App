@@ -4,7 +4,8 @@ Changelog for the PocketController-App phone app.
 
 ## [Unreleased]
 
-No notes yet.
+### Changed
+- Moved the Flutter project to the repository root so `flutter run` works from the clone directory (removed the nested `app/` folder)
 
 ## [1.2.2] - 2026-10-03
 

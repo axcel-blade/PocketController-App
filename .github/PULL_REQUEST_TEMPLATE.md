@@ -12,8 +12,8 @@
 
 ## Checklist
 
-- [ ] Mobile app analyzes and tests cleanly (`cd app && flutter analyze && flutter test`)
+- [ ] Mobile app analyzes and tests cleanly (`flutter analyze && flutter test`)
 - [ ] `docs/PROTOCOL.md` updated if the wire format changed
 - [ ] `CHANGELOG.md` updated under `[Unreleased]`
-- [ ] App version bumped in `app/pubspec.yaml` if this is a release PR
+- [ ] App version bumped in `pubspec.yaml` if this is a release PR
 - [ ] No build outputs or IDE files included
