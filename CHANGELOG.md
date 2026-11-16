@@ -4,6 +4,9 @@ Changelog for the PocketController-App phone app.
 
 ## [Unreleased]
 
+### Added
+- GitHub Actions workflows for release publishing, CodeQL, dependency review, secret scanning, changelog checks, stale issue cleanup, coverage, release drafting, Conventional Commit / PR title checks, Android and iOS builds, license checks, and SBOM generation
+
 ### Changed
 - Moved the Flutter project to the repository root so `flutter run` works from the clone directory (removed the nested `app/` folder)
 
