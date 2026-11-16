@@ -15,7 +15,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-c4f82a)](LICENSE.md)
 [![Version](https://img.shields.io/badge/version-1.2.2-c4f82a)](CHANGELOG.md)
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev/)
-[![Platforms](https://img.shields.io/badge/platform-Android%20%7C%20iOS-5cd6e6)](app/README.md)
+[![Platforms](https://img.shields.io/badge/platform-Android%20%7C%20iOS-5cd6e6)](#getting-started)
 [![Protocol](https://img.shields.io/badge/protocol-UDP%20%C2%B7%2048%20bytes-5cd6e6)](docs/PROTOCOL.md)
 
 This repository is the Flutter phone app for Android and iOS. It connects to [PocketController Server](https://github.com/axcel-blade/PocketController-Server).
@@ -23,7 +23,7 @@ This repository is the Flutter phone app for Android and iOS. It connects to [Po
 ## What this project does
 
 ```
-app/ (Flutter)
+lib/
 ├── screens/   (controller, connection)
 ├── widgets/   (controls, layout surface and picker)
 ├── models/    (gamepad state, layouts)
@@ -51,7 +51,20 @@ app/ (Flutter)
 
 ## Getting Started
 
-1. Build and install this app (`cd app && flutter run`).
+From the repository root (where `pubspec.yaml` lives):
+
+```sh
+flutter pub get
+flutter run
+```
+
+On Windows with an emulator, for example:
+
+```sh
+flutter run -d emulator-5554
+```
+
+1. Build and install this app with the commands above.
 2. Open the **PC connection** screen (status chip, top left). Your PC appears under **On your network**; tap it. Or enter the IP address and port manually and tap **Connect**.
 
 Next time, the app reconnects to the same PC automatically when it finds it.
@@ -63,18 +76,17 @@ Having trouble? See [SUPPORT.md](SUPPORT.md).
 ## Development
 
 ```sh
-cd app
 flutter analyze
 flutter test
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). The Flutter project notes are in [app/README.md](app/README.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Version
 
 | Project | Version |
 |---------|---------|
-| PocketController-App app | **1.2.2** |
+| PocketController-App | **1.2.2** |
 
 See the [changelog](CHANGELOG.md).
 

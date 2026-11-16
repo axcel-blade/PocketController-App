@@ -8,21 +8,21 @@ The app draws the controller, turns touches into a gamepad state, and sends that
 
 | Path | Responsibility |
 |------|----------------|
-| `app/lib/main.dart` | Loads settings, creates the shared `GamepadState` and `BridgeConnection`, starts the app. |
-| `app/lib/theme.dart` | Colour palette (graphite, lime accent, cyan detail) and Material theme. |
-| `app/lib/models/gamepad_state.dart` | Live input state: button and D-pad bitmasks, stick axes (-1…1), triggers (0…1). Fires `onDiscreteChange` on press/release/recentre. |
-| `app/lib/models/control_layout.dart` | `ControlKind`, `ControlPlacement` (normalized position + size) and `ControlLayout`; the Classic, Racing and Compact built-ins; JSON (de)serialization. |
-| `app/lib/services/app_settings.dart` | Persists address/port, haptics, the selected layout and custom layouts with `shared_preferences`. |
-| `app/lib/network/protocol.dart` | Serializes packets and parses replies. |
-| `app/lib/network/discovery.dart` | LAN discovery: sends probes, listens for announcements, keeps the list of PCs found. |
-| `app/lib/network/auto_connect.dart` | Runs discovery while disconnected and joins the known PC whenever it appears, with a 5 s retry delay; Disconnect pauses it (`pickAutoConnectTarget`). |
-| `app/lib/network/bridge_connection.dart` | UDP socket, handshake, 60 Hz send loop, pings, latency, timeouts and error messages. Exposes `BridgeStatus`. |
-| `app/lib/screens/controller_screen.dart` | Main screen: toolbar, control surface and layout editor. Releases all inputs when the app loses focus. |
-| `app/lib/screens/connection_screen.dart` | Address/port entry, connect/disconnect, status, errors, haptics toggle, compatibility notes. |
-| `app/lib/widgets/controls.dart` | Individual controls: `PadButton`, `FaceButtons`, `DpadControl`, `AnalogStick`, `TriggerPad`; haptics helper. |
-| `app/lib/widgets/control_surface.dart` | Positions each control of a layout (`placementRect`), enforces minimum touch targets, handles drag/select in edit mode. |
-| `app/lib/widgets/layout_sheet.dart` | Layout picker (select/delete) and save-layout dialog. |
-| `app/lib/widgets/status_chip.dart` | Always-visible connection indicator. |
+| `lib/main.dart` | Loads settings, creates the shared `GamepadState` and `BridgeConnection`, starts the app. |
+| `lib/theme.dart` | Colour palette (graphite, lime accent, cyan detail) and Material theme. |
+| `lib/models/gamepad_state.dart` | Live input state: button and D-pad bitmasks, stick axes (-1…1), triggers (0…1). Fires `onDiscreteChange` on press/release/recentre. |
+| `lib/models/control_layout.dart` | `ControlKind`, `ControlPlacement` (normalized position + size) and `ControlLayout`; the Classic, Racing and Compact built-ins; JSON (de)serialization. |
+| `lib/services/app_settings.dart` | Persists address/port, haptics, the selected layout and custom layouts with `shared_preferences`. |
+| `lib/network/protocol.dart` | Serializes packets and parses replies. |
+| `lib/network/discovery.dart` | LAN discovery: sends probes, listens for announcements, keeps the list of PCs found. |
+| `lib/network/auto_connect.dart` | Runs discovery while disconnected and joins the known PC whenever it appears, with a 5 s retry delay; Disconnect pauses it (`pickAutoConnectTarget`). |
+| `lib/network/bridge_connection.dart` | UDP socket, handshake, 60 Hz send loop, pings, latency, timeouts and error messages. Exposes `BridgeStatus`. |
+| `lib/screens/controller_screen.dart` | Main screen: toolbar, control surface and layout editor. Releases all inputs when the app loses focus. |
+| `lib/screens/connection_screen.dart` | Address/port entry, connect/disconnect, status, errors, haptics toggle, compatibility notes. |
+| `lib/widgets/controls.dart` | Individual controls: `PadButton`, `FaceButtons`, `DpadControl`, `AnalogStick`, `TriggerPad`; haptics helper. |
+| `lib/widgets/control_surface.dart` | Positions each control of a layout (`placementRect`), enforces minimum touch targets, handles drag/select in edit mode. |
+| `lib/widgets/layout_sheet.dart` | Layout picker (select/delete) and save-layout dialog. |
+| `lib/widgets/status_chip.dart` | Always-visible connection indicator. |
 
 A layout is a list of placements. Each placement has a centre (`x`, `y` as fractions of the control area) and a `size` (a fraction of the area height). `placementRect` turns this into pixels, applies minimum sizes and keeps every control on screen, so one layout works on phones of different sizes. Every layout contains every control. Custom layouts are stored as JSON. If a saved layout is missing a control, it is filled in from Classic.
 
@@ -55,6 +55,6 @@ The app never assumes it is connected. It only sends input while `connected`. On
 
 ## Testing
 
-- `app/test/protocol_test.dart` — packet layout, reply parsing, and `BridgeConnection` against a fake UDP peer on loopback (handshake, press/release delivery, timeout, full slot).
-- `app/test/discovery_test.dart` — discovery packet format, finding a fake peer on loopback, and the auto-connect selection rules.
-- `app/test/layout_and_ui_test.dart` — layout completeness, small-screen fit, persistence, and widget tests for buttons, multi-touch sticks, the D-pad and triggers.
+- `test/protocol_test.dart` — packet layout, reply parsing, and `BridgeConnection` against a fake UDP peer on loopback (handshake, press/release delivery, timeout, full slot).
+- `test/discovery_test.dart` — discovery packet format, finding a fake peer on loopback, and the auto-connect selection rules.
+- `test/layout_and_ui_test.dart` — layout completeness, small-screen fit, persistence, and widget tests for buttons, multi-touch sticks, the D-pad and triggers.
