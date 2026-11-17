@@ -28,8 +28,9 @@ This is the required workflow. Only `main` exists in this repository today.
 
 ## Building
 
+From the repository root (where `pubspec.yaml` lives):
+
 ```
-cd app
 flutter pub get
 flutter analyze
 flutter test
@@ -39,7 +40,7 @@ flutter run
 ## Protocol Changes
 
 The packets the app sends and the replies it handles are documented in [docs/PROTOCOL.md](docs/PROTOCOL.md).
-If you change them, update `app/lib/network/protocol.dart`, the app tests, and that document.
+If you change them, update `lib/network/protocol.dart`, the app tests, and that document.
 
 ## Pull Request Guidelines
 
@@ -48,11 +49,11 @@ If you change them, update `app/lib/network/protocol.dart`, the app tests, and t
 - When releasing the app, update:
   - `CHANGELOG.md` — move `[Unreleased]` entries into a dated `## [X.Y.Z] - YYYY-MM-DD` section
   - `README.md` — the version badge and the **Version** section
-  - `app/pubspec.yaml` — `version: X.Y.Z+N` (always increase the build number `N`, even for a patch)
+  - `pubspec.yaml` — `version: X.Y.Z+N` (always increase the build number `N`, even for a patch)
   - Tag the release `app-vX.Y.Z`
 - Do not include build outputs or IDE files in your commit.
 
 ## Code Style
 
-- Dart: follow the rules in `app/analysis_options.yaml` (`flutter analyze` must report no issues).
+- Dart: follow the rules in `analysis_options.yaml` (`flutter analyze` must report no issues).
 - No commented-out code or `TODO` left in production files — open an issue instead.

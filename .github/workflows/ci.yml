@@ -4,13 +4,25 @@ on:
   push:
     branches: [main, develop, "feature/**", "release/**", "hotfix/**"]
     paths:
-      - "app/**"
-      - ".github/workflows/ci-app.yml"
+      - "lib/**"
+      - "android/**"
+      - "ios/**"
+      - "test/**"
+      - "pubspec.yaml"
+      - "pubspec.lock"
+      - "analysis_options.yaml"
+      - ".github/workflows/ci.yml"
   pull_request:
     branches: [main, develop]
     paths:
-      - "app/**"
-      - ".github/workflows/ci-app.yml"
+      - "lib/**"
+      - "android/**"
+      - "ios/**"
+      - "test/**"
+      - "pubspec.yaml"
+      - "pubspec.lock"
+      - "analysis_options.yaml"
+      - ".github/workflows/ci.yml"
 
 jobs:
   build:
@@ -26,15 +38,12 @@ jobs:
           channel: stable
 
       - name: Install dependencies
-        working-directory: app
         run: flutter pub get
 
       - name: Analyze
-        working-directory: app
         run: flutter analyze
 
       - name: Test
-        working-directory: app
         run: |
           if [ -d "test" ]; then
             flutter test
@@ -43,12 +52,11 @@ jobs:
           fi
 
       - name: Build APK
-        working-directory: app
         run: flutter build apk --release
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: PocketController-${{ github.sha }}.apk
-          path: app/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
           retention-days: 14

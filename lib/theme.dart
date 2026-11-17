@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// PocketController palette: dark graphite surfaces, a vivid lime accent for
 /// primary/pressed states and restrained cyan for secondary detail.
