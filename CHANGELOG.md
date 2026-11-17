@@ -4,7 +4,8 @@ Changelog for the PocketController-App phone app.
 
 ## [Unreleased]
 
-No notes yet.
+### Changed
+- Release tags use `vX.Y.Z` (numeric SemVer). GitHub Releases now publish both the Android APK and an unsigned iOS IPA
 
 ## [1.2.3] - 2026-11-17
 
