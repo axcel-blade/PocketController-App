@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import '../network/bridge_connection.dart';
 import '../network/discovery.dart';
 import '../theme.dart';

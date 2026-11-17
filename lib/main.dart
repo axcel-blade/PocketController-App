@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'models/gamepad_state.dart';
 import 'network/auto_connect.dart';
 import 'network/bridge_connection.dart';
