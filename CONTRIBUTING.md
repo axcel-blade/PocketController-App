@@ -50,7 +50,7 @@ If you change them, update `lib/network/protocol.dart`, the app tests, and that 
   - `CHANGELOG.md` — move `[Unreleased]` entries into a dated `## [X.Y.Z] - YYYY-MM-DD` section
   - `README.md` — the version badge and the **Version** section
   - `pubspec.yaml` — `version: X.Y.Z+N` (always increase the build number `N`, even for a patch)
-  - Tag the release `app-vX.Y.Z`
+  - Tag the release `vX.Y.Z` (numeric SemVer only, e.g. `v1.2.3`)
 - Do not include build outputs or IDE files in your commit.
 
 ## Code Style
