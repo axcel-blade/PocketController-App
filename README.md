@@ -51,7 +51,9 @@ lib/
 
 ## Getting Started
 
-From the repository root (where `pubspec.yaml` lives):
+From a [GitHub Release](https://github.com/axcel-blade/PocketController-App/releases): install the Android `.apk`, or use the unsigned iOS `.ipa` with your own Apple signing tooling. Tags are `vX.Y.Z` (numeric SemVer).
+
+From source (repository root, where `pubspec.yaml` lives):
 
 ```sh
 flutter pub get
@@ -64,7 +66,7 @@ On Windows with an emulator, for example:
 flutter run -d emulator-5554
 ```
 
-1. Build and install this app with the commands above.
+1. Install from a release or build with the commands above.
 2. Open the **PC connection** screen (status chip, top left). Your PC appears under **On your network**; tap it. Or enter the IP address and port manually and tap **Connect**.
 
 Next time, the app reconnects to the same PC automatically when it finds it.
