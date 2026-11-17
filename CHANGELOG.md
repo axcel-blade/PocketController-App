@@ -8,6 +8,7 @@ Changelog for the PocketController-App phone app.
 - GitHub Actions workflows for CI, Android/iOS builds, and tagged release publishing
 
 ### Changed
+- Upgraded Android Gradle Wrapper to 9.5.0, AGP to 9.3.1, and Kotlin to 2.4.20 for Flutter 3.50+ builds
 - Migrated UI imports from `package:flutter/material.dart` to the standalone `material_ui` package (Flutter 3.47+)
 - Moved the Flutter project to the repository root so `flutter run` works from the clone directory (removed the nested `app/` folder)
 
