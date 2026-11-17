@@ -13,7 +13,7 @@
 
 <!-- Static badges -->
 [![License: MIT](https://img.shields.io/badge/license-MIT-c4f82a)](LICENSE.md)
-[![Version](https://img.shields.io/badge/version-1.2.2-c4f82a)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.3-c4f82a)](CHANGELOG.md)
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev/)
 [![Platforms](https://img.shields.io/badge/platform-Android%20%7C%20iOS-5cd6e6)](#getting-started)
 [![Protocol](https://img.shields.io/badge/protocol-UDP%20%C2%B7%2048%20bytes-5cd6e6)](docs/PROTOCOL.md)
@@ -86,7 +86,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 | Project | Version |
 |---------|---------|
-| PocketController-App | **1.2.2** |
+| PocketController-App | **1.2.3** |
 
 See the [changelog](CHANGELOG.md).
 

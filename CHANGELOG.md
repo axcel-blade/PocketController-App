@@ -4,6 +4,10 @@ Changelog for the PocketController-App phone app.
 
 ## [Unreleased]
 
+No notes yet.
+
+## [1.2.3] - 2026-11-17
+
 ### Added
 - GitHub Actions workflows for CI, Android/iOS builds, and tagged release publishing
 
